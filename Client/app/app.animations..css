@@ -1,0 +1,7 @@
+ul li a{
+    margin-right: 20px;
+}
+
+.nav-collapse .li {
+    list-style-type: none;
+}

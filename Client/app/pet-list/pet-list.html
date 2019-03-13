@@ -1,0 +1,45 @@
+<menu-list></menu-list>
+<body>
+    <div ng-controller="petListController">
+        <div class="container-fluid">
+            <h3>
+                <font color="007bff">List of Pets</font>
+            </h3>
+            <div class="container">
+                <table class="table">
+                    <!--Body content-->
+                    <ul>
+                        <thead>
+                            <tr ng-show="$ctrl.pets">
+                                <th>PetName</th>
+                                <th>Place</th>
+                                <th>Age</th>
+                                <th>User</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="pet in $ctrl.pets | filter:$ctrl.query  | orderBy:$ctrl.orderProp">
+                                <td>{{pet.petName}}</td>
+                                <td>{{pet.petPlace}}</td>
+                                <td>{{pet.petAge}}</td>
+                                <td>{{pet.user === null ? 'NA' : pet.user.username}}</td>
+                                <!-- <td>
+                                    <button ng-click="buyPets(pet)" class="btn btn-primary btn-sm"
+                                        ng-disabled="pet.user !== null">{{pet.user === null ? 'Buy': 'Sold Out'}}</button>
+                                </td> -->
+                            </tr>
+                        </tbody>
+                    </ul>
+                </table>
+                <!-- <pagination 
+                                    ng-model="currentPage"
+                                    total-items="$ctrl.pets.length"
+                                    max-size="maxSize"  
+                                    boundary-links="true">
+                              </pagination> -->
+                <div data-pagination="" data-num-pages="numOfPages()" data-current-page="currentPage"
+                    data-max-size="maxSize" data-boundary-links="true"></div>
+            </div>
+        </div>
+    </div>
+</body>

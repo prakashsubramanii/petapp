@@ -1,0 +1,126 @@
+<!-- Iterate with table data -->
+<nav class="navbar navbar-expand-sm">
+    <!-- bg-light -->
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <!-- <li class="nav-item">
+        <a class="nav-link" href="#!/login">Home</a>
+      </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="#!/mypets">My Pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#!/pets">Pet Lists</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#!/addpet">Add Pet</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#!/logout" onclick="return confirm('Do you wish to logout. Press OK.');">Log
+                Out</a>
+        </li>
+    </ul>
+</nav>
+
+<body>
+    <div ng-controller="petListController">
+        <div class="container-fluid">
+            <!--Sidebar content-->
+            <!-- <div ng-controller="ModalCtrl"> -->
+                <button class="btn btn-info" ng-click="open()" style="margin: 15px;">Advanced Search</button>
+                
+                <!-- <h2 style="color: red;">{{result}}</h2> -->
+              <!-- </div> -->
+            <!-- <p> Advanced Search </p>
+            <div class="search_fld">Name <input ng-model="$ctrl.petName"></div>
+            <div class="search_fld">Place <input ng-model="$ctrl.petPlace"></div>
+            <div class="search_fld">Pet Age <input ng-model="$ctrl.petAge"></div>
+            <p> -->
+                <!-- <p>
+                    Sort by:
+                    <select ng-model="$ctrl.orderProp">
+                        <option value="petName">Alphabetical</option>
+                        <option value="petAge">Age</option>
+                    </select>
+                </p> -->
+                <h3>
+                    <font color="007bff">List of Pets</font>
+                </h3>
+                <div class="container">
+                    <table id="petListTable" class="display">
+                        <!--Body content-->
+                        <!-- <ul> -->
+                            <thead>
+                                <tr ng-show="$ctrl.pets">
+                                    <th>PetName</th>
+                                    <th>Place</th>
+                                    <th>Age</th>
+                                    <th>User</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr dir-paginate="pet in $ctrl.pets | filter:$ctrl.query  | orderBy:$ctrl.orderProp | itemsPerPage: 3">
+                                    <td>{{pet.petName}}</td>
+                                    <td>{{pet.petPlace}}</td>
+                                    <td>{{pet.petAge}}</td>
+                                    <td>{{pet.user === null ? 'NA' : pet.user.username}}</td>
+                                    <td>
+                                        <button ng-click="buyPets(pet)" class="btn btn-primary btn-sm"
+                                            ng-disabled="pet.user !== null">{{pet.user === null ? 'Buy': 'Sold Out'}}</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        <!-- </ul> -->
+                    </table>
+                    <dir-pagination-controls
+                    max-size="3"
+                    direction-links="true"
+                    boundary-links="true" >
+                </dir-pagination-controls>
+                    <!-- <div data-pagination="" data-num-pages="$ctrl.numOfPages()" 
+                    data-current-page="$ctrl.curPage" data-max-size="$ctrl.maxSize"  
+                    data-boundary-links="true"></div> -->
+                    <!--  			totalItems: totalItems,
+			currentPage: currentPage,
+			pageSize: pageSize,
+			totalPages: totalPages,
+			startPage: startPage,
+			endPage: endPage,
+			startIndex: startIndex,
+			endIndex: endIndex,
+			pages: pages-->
+                    <!-- <ul ng-if="$ctrl.filteredPets.length" class="pagination">
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
+                            <a ng-click="$ctrl.setPage(1)">First</a>
+                        </li>
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
+                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Previous</a>
+                        </li>
+                        <li ng-repeat="page in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage === page}">
+                            <a ng-click="$ctrl.setPage(page)">{{page}}</a>
+                        </li>                
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
+                            <a ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Next</a>
+                        </li>
+                        <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
+                            <a ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Last</a>
+                        </li>
+                    </ul>
+             -->
+                </div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript">
+    function logOut() {
+        var answer = confirm("Do you wish to log out")
+        if (answer)
+            window.location.replace('#!/login');
+    }        
+    //     $(document).ready( 
+    //         function () {
+    //             alert('asdasdasd')
+    //     $('#petListTable').DataTable();
+    // } );
+</script>

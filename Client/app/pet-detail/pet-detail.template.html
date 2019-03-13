@@ -1,0 +1,26 @@
+<img ng-src="{{$ctrl.pet.images[0]}}" class="phone" />
+
+<h1>{{$ctrl.pet.name}}</h1>
+
+<p>{{$ctrl.pet.description}}</p>
+
+<ul class="phone-thumbs">
+  <li ng-repeat="img in $ctrl.pet.images">
+    <img ng-src="{{img}}" />
+  </li>
+</ul>
+t
+<ul class="specs">
+  <li>
+    <span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in $ctrl.pet.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  ...
+  <li>
+    <span>Additional Features</span>
+    <dd>{{$ctrl.pet.additionalFeatures}}</dd>
+  </li>
+</ul>

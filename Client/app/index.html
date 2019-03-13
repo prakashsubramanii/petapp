@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="petsApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Pets Peers</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" /> 
+    <link rel="stylesheet" href="vendors/css/jquery.dataTables.min.css"/>
+    <!-- <link rel="stylesheet" href="app.animations.css" /> -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script src="vendors/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="vendors/js/jquery.min.js"></script>
+    <script src="vendors/js/dirPagination.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script> 
+    <script src="menu-list/menu-list.module.js"></script>
+    <script src="menu-list/menu-list.component.js"></script>
+    <script src="pet-list/pet-list.module.js"></script>
+    <script src="pet-list/pet-list.component.js"></script>
+    <script src="pet-list/pet-list.services.js"></script>
+    <script src="pet-detail/pet-detail.module.js"></script>
+    <script src="pet-detail/pet-detail.component.js"></script>
+    <script src="authentication/authentication.module.js"></script>
+    <script src="authentication/authentication.component.js"></script>
+    <script src="authentication/authentication.services.js"></script>
+    <!-- Used for JavaScript animations (include this before angular.js) -->
+    <!-- <script src="lib/jquery/dist/jquery.js"></script> -->
+    <!-- Adds animation support in AngularJS -->
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <!-- Defines JavaScript animations -->
+    <script src="app.animations.js"></script>
+  </head>
+  <body>
+           <!-- <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Pet Peers</a>
+            </div>                       
+            <menu-list></menu-list> 
+      </nav>
+      
+      <p>Hello, {{ name }}!</p>
+
+      <table>
+        <tr>
+          <th> Row Number </th>
+        </tr>
+        <tr ng-repeat="i in [0,1,2,3,4,5,6,7]"><td>{{i}}</td></tr>
+      </table>
+
+      <pet-list></pet-list> -->
+          <div class="container">
+              <div ng-view></div>
+          </div>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+INSERT INTO PETS VALUES(101,0,'Lucy','Mumbai',null);
+INSERT INTO PETS VALUES(202,3,'Tiger','Mysore',null);
+INSERT INTO PETS VALUES(3003,4,'Timmy','Bangalore',null);
+INSERT INTO PETS VALUES(403,5,'Lucy','Hyderabad',null);
+INSERT INTO PETS VALUES(501,3,'Tommy','Mumbai',null);
+INSERT INTO PETS VALUES(106,3,'Jimmy','Mumbai',null);
+INSERT INTO PETS VALUES(702,2,'Jimmy','Mumbai',null);

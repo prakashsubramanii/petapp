@@ -76,6 +76,13 @@
 				<configuration>
                                    <mainClass>com.mockathon.usecase.PetPeersApplication</mainClass>
                                 </configuration>
+<executions>
+        <execution>
+          <goals>
+            <goal>repackage</goal>
+          </goals>
+        </execution>
+      </executions>
    
 			</plugin>
 		</plugins>

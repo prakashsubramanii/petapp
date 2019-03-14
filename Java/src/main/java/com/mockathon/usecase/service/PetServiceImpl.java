@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -40,6 +42,8 @@ public class PetServiceImpl implements PetService {
 
 	@Override
 	public Pet savePet(Pet pet) throws Exception{
+		System.out.println("inside service ================== "+authenticationService.getCurrentUser().getUsername());
+		pet.setAddedBy(authenticationService.getCurrentUser().getUsername());
 		return petRepository.save(pet);
 	}
 

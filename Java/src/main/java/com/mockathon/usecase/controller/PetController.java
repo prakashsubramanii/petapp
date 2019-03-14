@@ -71,7 +71,7 @@ public class PetController {
 	
 	@ApiOperation(value="Creats new Pet")
 	@PostMapping(path="/")
-	public ResponseEntity<Pet> createPet(@RequestBody @Valid Pet pet) 
+	public ResponseEntity<Pet> createPet(@RequestBody  Pet pet) 
 					throws Exception {
 		return new ResponseEntity<Pet>(petservice.savePet(pet),HttpStatus.OK);
 	}
